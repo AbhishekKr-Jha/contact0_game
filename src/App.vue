@@ -35,8 +35,10 @@ export default {
         const dotId = document.getElementById(`dot${index}`); 
         const randomX=Math.random()
       const randomY=Math.random()
-      const randomNumberX = Math.floor(randomX * (window.innerWidth+200)) + 1;
-      const randomNumberY = Math.floor(randomY * window.innerHeight-100) + 1;
+      // const randomNumberX = Math.floor(randomX * (window.innerWidth+200)) + 1;
+      // const randomNumberY = Math.floor(randomY * window.innerHeight+130) + 1;
+      const randomNumberX = Math.floor(randomX * (window.innerWidth + 400)) - 200; 
+      const randomNumberY = Math.floor(randomY * (window.innerHeight + 300)) - 150; 
 
       dotId.style.left=randomNumberX+"px"
       dotId.style.top=randomNumberY+"px"
@@ -73,7 +75,7 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
 
   },
   mounted() {
-    this.updateChild_id= setInterval(this.updateChildCursor, 2000); 
+    this.updateChild_id= setInterval(this.updateChildCursor, 1500); 
 //     setTimeout(() => {
 // clearInterval(this.updateChildCursor)
 //     },3000)
@@ -81,7 +83,7 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
     setTimeout(() => {
   this.collision_id=setInterval(this.checkCollisions, 20); 
 }, 2000); 
-    this.increaseDots_id=setInterval(()=>this.dots.length<40 && this.dots.push(this.dots.length),2000)
+    this.increaseDots_id=setInterval(()=>this.dots.length<40 && this.dots.push(this.dots.length),1500)
   }
 };
 </script>
@@ -115,8 +117,8 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
 
 .custom-cursor {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +130,7 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
   /* transition: all 0.1s ease-out; */
 }
 .child-cursor{
-  transition: all 2.1s ease-out;
+  transition: all 1.5s ease-out;
   background-color: black;
   color: white;
   left: -20px;
