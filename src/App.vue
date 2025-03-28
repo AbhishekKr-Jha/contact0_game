@@ -6,7 +6,7 @@ import Timer from './components/Timer.vue';
 export default {
   data() {
     return {
-      modalVisibility:false,
+      modalVisibility:true,
       cursorX: 0,
       cursorY: 0,
       // dots:[0,1,2,3,4,5,6,7,8]
