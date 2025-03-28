@@ -77,11 +77,11 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
 
   },
   mounted() {
-    this.updateChild_id= setInterval(this.updateChildCursor, 1500); 
+    this.updateChild_id= setInterval(this.updateChildCursor, 2000); 
     setTimeout(() => {
   this.collision_id=setInterval(this.checkCollisions, 20); 
 }, 2000); 
-    this.increaseDots_id=setInterval(()=>this.dots.length<40 && this.dots.push(this.dots.length),1500)
+    this.increaseDots_id=setInterval(()=>this.dots.length<40 && this.dots.push(this.dots.length),2000)
   }
 };
 </script>
@@ -128,7 +128,7 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
   /* transition: all 0.1s ease-out; */
 }
 .child-cursor{
-  transition: all 1.5s ease-out;
+  transition: all 2s ease-out;
   background-color: black;
   color: white;
   left: -20px;
