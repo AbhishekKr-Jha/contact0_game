@@ -1,0 +1,22 @@
+@import './base.css';
+/* @import './secondary.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Itim&display=swap');
+
+
+*{margin: 0;padding: 0;box-sizing: border-box;   font-family: "Itim", cursive;}
+
+
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: white;
+  color: white;
+}
+
+#app {
+  width: 100%;
+  max-width: 1500px;
+}
+
+
