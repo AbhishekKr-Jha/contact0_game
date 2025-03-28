@@ -6,7 +6,7 @@ import Timer from './components/Timer.vue';
 export default {
   data() {
     return {
-      modalVisibility:true,
+      modalVisibility:false,
       cursorX: 0,
       cursorY: 0,
       // dots:[0,1,2,3,4,5,6,7,8]
@@ -59,6 +59,8 @@ console.log("main--",this.cursorX)
 // clearInterval(this.updateChild_id); 
 // clearInterval(this.collision_id); 
 clearInterval(this.increaseDots_id); 
+// this.increaseDots_id = null
+
 if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) < this.dots.length) {
   localStorage.setItem('score', JSON.stringify(this.dots.length));
 }
@@ -76,10 +78,6 @@ if (!localStorage.getItem('score') || JSON.parse(localStorage.getItem('score')) 
   },
   mounted() {
     this.updateChild_id= setInterval(this.updateChildCursor, 1500); 
-//     setTimeout(() => {
-// clearInterval(this.updateChildCursor)
-//     },3000)
-    // setInterval(this.checkCollisions, 20);
     setTimeout(() => {
   this.collision_id=setInterval(this.checkCollisions, 20); 
 }, 2000); 
